@@ -1,0 +1,45 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== Virtual envs (do NOT commit) =====
+.venv/
+venv/
+env/
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===== Documents (assignment files) =====
+*.pdf
+*.doc
+*.docx
+
+# ===== Project outputs (auto-generated) =====
+IRP_Project/run/
+
+# ===== Generated data artifacts (reproducible) =====
+IRP_Project/data/processed/
+IRP_Project/data/topology/
+
+# ===== Logs =====
+*.log
+
+# ===== Data policy =====
+# The provided dataset / assignment materials are often not allowed to be uploaded.
+# Keep them locally, but do not commit by default.
+IRP_Project/data/raw/
+*.csv
