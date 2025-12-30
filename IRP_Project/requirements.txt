@@ -3,5 +3,8 @@ pandas
 torch
 tqdm
 
+# Optional (for saving plots)
+matplotlib
+
 # Optional (required for MILP optimization with Gurobi)
 # gurobipy

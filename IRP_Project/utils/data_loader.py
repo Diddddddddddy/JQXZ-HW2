@@ -35,6 +35,8 @@ class DataProcessor:
         self.cfg = config
         self.dist_matrix = None
         self.store_coords = None
+        self.train_dataset = None
+        self.test_dataset = None
 
     def generate_topology(self) -> np.ndarray:
         """
@@ -152,6 +154,10 @@ class DataProcessor:
         # 6. 封装 DataLoader
         train_dataset = IRPDataset(X_train, Y_train)
         test_dataset = IRPDataset(X_test, Y_test)
+
+        # 暴露数据集对象，便于后续构造不同 batch_size 的 DataLoader（例如决策导向训练）
+        self.train_dataset = train_dataset
+        self.test_dataset = test_dataset
         
         train_loader = DataLoader(train_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=True)
         test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False) # 测试集batch=1便于逐个评估
